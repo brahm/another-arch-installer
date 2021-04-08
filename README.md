@@ -2,8 +2,6 @@
 
 # Another Custom Automatic Installation Script For Arch Linux
 
-Copyleft (ɔ) 2021 Wagner Brahm (https://wagnerbrahm.com.br).
-
 This script was made to automatically install Arch Linux 2021.04.01 on an Apple Mac Pro with the following specifications: 
 
 - Model: A1289
@@ -20,5 +18,7 @@ This script was made to automatically install Arch Linux 2021.04.01 on an Apple 
 - Optical: 18x DL "Superdrive"
 
 Feel free to download and adapt it for your own needs.
+
+Copyleft (ɔ) 2021 Wagner Brahm (https://wagnerbrahm.com.br).
 
 [logo]: https://archlinux.org/static/logos/archlinux-logo-black-90dpi.0c696e9c0d84.png "Arch Linux"
