@@ -34,9 +34,14 @@ For use it:
 # sh base.sh
 ```
 3. Go get some refreshments.
-4. Enjoy your new system!
+4. After enter the new system, to constinue the instalation, run this:
+```
+# curl -L https://raw.githubusercontent.com/brahm/another-arch-installer/main/post.sh > post.sh
+# sh post.sh
+```
+5. Enjoy!
 
-<br /><br /><br /><br />
+<br /><br />
 
 Copyleft (ɔ) 2021 Wagner Brahm (https://wagnerbrahm.com.br).
 
