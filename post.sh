@@ -84,4 +84,4 @@ echo "...done!"
 sleep 2
 
 # The end!
-printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
+#printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
