@@ -22,9 +22,6 @@ wipefs --all --force /dev/sda
 echo "...done!"
 sleep 2
 
-# echo "Creating a DOS partition table and the /boot and / (root) partitions..."
-# echo -e ',50G,L,*\n,,L' | sfdisk --label=dos /dev/sda
-
 echo "Creating a GPT partition table and the /boot (EFI) and / (root) partitions..."
 echo -e ',512M,U\n,,L' | sfdisk --label=gpt /dev/sda
 echo "...done!"
