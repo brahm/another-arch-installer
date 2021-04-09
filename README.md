@@ -2,7 +2,7 @@
 
 # Another Custom Automatic Installation Script For Arch Linux
 
-$~~~~~~~~~~~$
+<br /><br /><br /><br /><br /><br />
 
 This script was made to automatically install Arch Linux 2021.04.01 on an Apple Mac Pro with the following specifications: 
 
