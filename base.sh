@@ -6,6 +6,8 @@
 # Permission to copy and modify is granted under a CC BY 4.0 License
 # Last revised 2021/04/08
 
+clear
+
 echo "+-------------------------------------------------------------------+"
 echo "|                                                                   |"
 echo "|                 This is another custom automatic                  |"
