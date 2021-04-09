@@ -19,12 +19,13 @@ echo "|                                                                   |"
 echo "+-------------------------------------------------------------------+"
 sleep 3
 
-echo "/n/n"
+echo ""
+echo ""
 
 echo "Let's get started!"
 sleep 2
 
-echo "/n/n
+echo ""
 
 echo "Setting machine name..."
 echo "discovery" >> /etc/hostname
@@ -83,5 +84,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo "...done!"
 sleep 2
 
-# The end!
-#printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
+echo ""
+echo ""
+
+printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
