@@ -2,15 +2,16 @@
 
 # Another Custom Automatic Installation Script For Arch Linux
 
-<br /><br /><br /><br /><br /><br />
+<br /><br />
 
 This script was made to automatically install Arch Linux 2021.04.01 on an Apple Mac Pro with the following specifications: 
 
+<br />
 
 - Model: A1289
 - Family: Mid-2010
 - ID: MacPro5,1
-
+<br />
 - Processors: 2 Xeon X5650 2.66 GHz 6 Core
 - ROM/Firmware Type: EFI 64-Bit
 - RAM: 32 GB 1333 MHz DDR3 ECC SDRAM
@@ -19,11 +20,11 @@ This script was made to automatically install Arch Linux 2021.04.01 on an Apple 
 - Standard Ethernet: 2 Gigabit 10/100/1000BASE-T
 - Wireless: AirPort Extreme (802.11a/b/g/n) and Bluetooth 2.1+EDR
 - Optical: 18x DL "Superdrive"
-
+<br /><br />
 Feel free to download and adapt it for your own needs.
-
+<br /><br />
 For use it:
-
+<br />
 1. Boot from your Arch Linux installer.
 2. Run this commands:
 
@@ -34,7 +35,7 @@ For use it:
 3. Go get some refreshments.
 4. Enjoy your new system!
 
-
+<br /><br /><br /><br /><br /><br />
 
 Copyleft (ɔ) 2021 Wagner Brahm (https://wagnerbrahm.com.br).
 
