@@ -18,7 +18,9 @@ echo "|                                                                   |"
 echo "+-------------------------------------------------------------------+"
 sleep 3
 
-echo "/n/n/n/n"
+echo ""
+echo ""
+echo ""
 
 echo "Let's get started!"
 sleep 2
@@ -57,6 +59,7 @@ sleep 2
 
 echo "Finding the best mirror list for downloading Arch Linux..."
 reflector --verbose --latest 100 --protocol https --threads 24 --sort rate --save /etc/pacman.d/mirrorlist
+pacman -Syy
 echo "...done!"
 sleep 2
 
@@ -90,14 +93,18 @@ echo "/swapfile    none    swap    defaults    0 0" >> /mnt/etc/fstab
 echo "...done!"
 sleep 2
 
-echo "/n/n"
+echo ""
+echo ""
 echo "*********************************************************************"
-echo "/n"
+echo ""
 echo "Base install has finished!"
-echo "/n/n"
-echo "After entering into the new system, get and run the post.sh script"
+echo ""
+echo ""
+echo "After entering into the new system, get the post.sh script here:"
+echo "https://raw.githubusercontent.com/brahm/another-arch-installer/main/post.sh"
 echo "to continue configuring this system."
-echo "/n/n"
+echo ""
+echo ""
 sleep 3
 
 echo "Entering as root into the new system..."
