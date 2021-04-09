@@ -17,7 +17,7 @@ echo "|                                                                   |"
 echo "|                            Post Install                           |"
 echo "|                                                                   |"
 echo "+-------------------------------------------------------------------+"
-sleep 3
+sleep 2
 
 echo ""
 echo ""
@@ -25,6 +25,7 @@ echo ""
 echo "Let's get started!"
 sleep 2
 
+echo ""
 echo ""
 
 echo "Setting machine name..."
@@ -35,10 +36,14 @@ echo "127.0.1.1 discovery.localdomain discovery" >> /etc/hosts
 echo "...done!"
 sleep 2
 
+echo ""
+
 echo "Setting the keymap..."
 echo "KEYMAP=us-acentos" >> /etc/vconsole.conf
 echo "...done!"
 sleep 2
+
+echo ""
 
 echo "Setting system wide language..."
 echo LANG=en_US.UTF-8 >> /etc/locale.conf
@@ -48,11 +53,15 @@ locale-gen
 echo "...done!"
 sleep 2
 
+echo ""
+
 echo "Setting the time zone..."
-ls -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc --utc
 echo "...done!"
 sleep 2
+
+echo ""
 
 echo "Setting some environment variables..."
 echo "EDITOR=nano visudo" >> /etc/environment
@@ -61,10 +70,14 @@ echo "QT_IM_MODULE=cedilla" >> /etc/environment
 echo "...done!"
 sleep 2
 
+echo ""
+
 echo "Setting the root password..."
 echo root:password | chpasswd
 echo "...done!"
 sleep 2
+
+echo ""
 
 echo "Creating my user account..."
 useradd -m -g users -G wheel,sys,log,network,floppy,scanner,power,rfkill,users,video,storage,optical,lp,audio,adm,ftp,mail,git -s /bin/zsh brahm
@@ -72,10 +85,14 @@ echo brahm:password | chpasswd
 echo "...done!"
 sleep 2
 
+echo ""
+
 echo "Giving user wheel access..."
 sed -i '/%wheel ALL=(ALL) ALL'/s/^#//g /etc/sudoers
 echo "...done!"
 sleep 2
+
+echo ""
 
 echo "Installing the boot manager..."
 pacman -S --noconfirm grub efibootmgr
@@ -88,3 +105,7 @@ echo ""
 echo ""
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
+
+echo ""
+echo ""
+
