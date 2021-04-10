@@ -153,4 +153,5 @@ sleep 3
 
 echo "Entering as root into the new system..."
 echo "The installation will continue from threre..."
+sleep 2
 arch-chroot /mnt
