@@ -36,12 +36,16 @@ echo "...done!"
 sleep 2
 
 echo ""
+echo "*********************************************************************"
+echo ""
 
 echo "Setting the keymap..."
 echo "KEYMAP=us-acentos" >> /etc/vconsole.conf
 echo "...done!"
 sleep 2
 
+echo ""
+echo "*********************************************************************"
 echo ""
 
 echo "Setting system wide language..."
@@ -53,6 +57,8 @@ echo "...done!"
 sleep 2
 
 echo ""
+echo "*********************************************************************"
+echo ""
 
 echo "Setting the time zone..."
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
@@ -60,6 +66,8 @@ hwclock --systohc --utc
 echo "...done!"
 sleep 2
 
+echo ""
+echo "*********************************************************************"
 echo ""
 
 echo "Setting some environment variables..."
@@ -70,11 +78,17 @@ echo "...done!"
 sleep 2
 
 echo ""
+echo "*********************************************************************"
+echo ""
+
+echo ""
 echo "Setting the root password..."
 echo root:password | chpasswd
 echo "...done!"
 sleep 2
 
+echo ""
+echo "*********************************************************************"
 echo ""
 
 echo "Creating my user account..."
@@ -84,6 +98,8 @@ echo "...done!"
 sleep 2
 
 echo ""
+echo "*********************************************************************"
+echo ""
 
 echo "Giving user wheel access..."
 sed -i '/%wheel ALL=(ALL) ALL'/s/^#//g /etc/sudoers
@@ -91,28 +107,31 @@ echo "...done!"
 sleep 2
 
 echo ""
+echo "*********************************************************************"
+echo ""
 
 echo "Configuring the network..."
-pacman -S --noconfirm dkms broadcom-wl-dkms networkmanager dialog wpa_supplicant bluez bluez-libs bluez-utils bluez-tools ntp openssh rsync inetutils dnsutils avahi iptables ipset firewalld nss-mdns reflector
+pacman -S --noconfirm --needed dkms broadcom-wl-dkms networkmanager dialog wpa_supplicant bluez bluez-libs bluez-utils bluez-tools ntp openssh samba inetutils dnsutils avahi iptables ipset firewalld nss-mdns reflector
+curl -L https://raw.githubusercontent.com/brahm/another-arch-installer/main/smb.conf > /etc/samba/smb.conf
 systemctl enable NetworkManager
 systemctl enable NetworkManager-dispatcher.service
 systemctl enable bluetooth
 systemctl enable sshd
+systemctl enable smb.service
+systemctl enable nmb.service
 systemctl enable avahi-daemon
 systemctl enable reflector.timer
 systemctl enable firewalld
 systemctl enable acpid
 systemctl enable ntp
-echo "Enabling Wifi based on User Choice"
+smbpasswd -a brahm
 nmcli device wifi
-echo "Please select the Wifi to connect to you. Type the name"
-read SSID
-echo "Please provide the password for ${SSID}"
-read password
-nmcli dev wifi connect ${SSID} password ${password} 
+nmcli dev wifi connect "wifi name here" password wifi-password-here
 echo "...done!"
 sleep 2
 
+echo ""
+echo "*********************************************************************"
 echo ""
 
 echo "Regenerating initrd image..."
@@ -120,6 +139,8 @@ mkinitcpio -p linux
 echo "...done!"
 sleep 2
 
+echo ""
+echo "*********************************************************************"
 echo ""
 
 echo "Installing the boot manager..."
@@ -129,10 +150,15 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo "...done!"
 sleep 2
 
+clear
 echo ""
 echo ""
-
-printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
-
+echo "Configuration has finished!"
+echo ""
+echo ""
+echo "Enjoy!"
+echo ""
+echo ""
+printf "\e[1;32mType exit, umount -a and reboot.\e[0m"
 echo ""
 echo ""
