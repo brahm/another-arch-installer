@@ -51,9 +51,11 @@ echo "*********************************************************************"
 echo ""
 
 echo "Installing system tools and services..."
-pacman -S --noconfirm --needed smbclient cifs-utils fuseiso fuse3 fuse2 autofs gptfdisk exfat-utils ntfs-3g haveged xdg-usr-dirs cronie lsof usbutils lm_sensors powertop flatpak pacman-contrib bash-completion zsh-completion zsh-syntax-highlighting man-pages man-db dmidecode xdg-desktop-portal xdg-desktop-portal-gtk 
+pacman -S --noconfirm --needed smbclient cifs-utils fuseiso fuse3 fuse2 autofs gptfdisk exfat-utils ntfs-3g haveged xdg-usr-dirs cronie lsof usbutils lm_sensors powertop flatpak pacman-contrib bash-completion zsh-completion zsh-syntax-highlighting man-pages man-db dmidecode xdg-desktop-portal lsb-release hddtemp 
+paru --noconfirm -S auto-cpufreq
 systemctl enable cronie
 systemctl enable haveged
+systemctl enable auto-cpufreq
 echo "...done!"
 sleep 2
 
@@ -62,7 +64,7 @@ echo "*********************************************************************"
 echo ""
 
 echo "Installing utilities..."
-pacman -S --noconfirm --needed unarchiver bzip2 gzip lrzip lz4 lzip lzop zstd p7zip unrar zip unzip lhasa arj ncompress par2cmdline sharutils htop nnn tree exa bat jq rsync tracerout nmap net-tools speedtest-cli
+pacman -S --noconfirm --needed unarchiver bzip2 gzip lrzip lz4 lzip lzop zstd p7zip unrar zip unzip lhasa arj ncompress par2cmdline sharutils htop nnn tree exa bat jq rsync tracerout nmap net-tools speedtest-cli wget neofetch
 echo "...done!"
 sleep 2
 
@@ -80,7 +82,7 @@ echo "*********************************************************************"
 echo ""
 
 echo "Installing video..."
-pacman -S --noconfirm --needed xorg-server xorg-xinit xorg-server-utils xf86-video-amdgpu xf86-input-libinput xf86-input-synaptics mesa lib32-mesa libva-mesa-driver mesa-vdpau vulcan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d
+pacman -S --noconfirm --needed xorg-server xorg-xinit xorg-server-utils xf86-video-amdgpu xf86-input-libinput xf86-input-synaptics mesa lib32-mesa libva-mesa-driver mesa-vdpau vulcan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d opencl-mesa
 
 echo "...done!"
 sleep 2
@@ -90,7 +92,8 @@ echo "*********************************************************************"
 echo ""
 
 echo "Installing printer..."
-pacman -S --noconfirm --needed cups cups-pdf cups-filters bluez-cups ghostscript imagemagick 
+pacman -S --noconfirm --needed cups cups-pdf cups-filters bluez-cups ghostscript imagemagick
+systemctl enable cups.service
 echo "...done!"
 sleep 2
 
@@ -143,11 +146,11 @@ echo ""
 echo "Post-install has finished!"
 echo ""
 echo ""
-echo "Now it's time to choose between turn this system"
-echo "into a desktop or a server."
-echo ""
-echo ""
+echo "Now it's time to choose between turn this system into a:"
+echo "Desktop: https://raw.githubusercontent.com/brahm/another-arch-installer/main/4-gnome.sh"
+echo "Server: https://raw.githubusercontent.com/brahm/another-arch-installer/main/5-server.sh"
 
-echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
-sleep 5
-sudo reboot
+echo ""
+echo ""
+printf "\e[1;32mType 'curl -L https://onefromthelist.com/scritp.sh > script.sh', and run 'sh script.sh'.\e[0m"
+
