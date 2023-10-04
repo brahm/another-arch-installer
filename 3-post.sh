@@ -150,7 +150,5 @@ echo "Now it's time to choose between turn this system into a:"
 echo "Desktop: https://raw.githubusercontent.com/brahm/another-arch-installer/main/4-gnome.sh"
 echo "Server: https://raw.githubusercontent.com/brahm/another-arch-installer/main/5-server.sh"
 
-echo ""
-echo ""
-printf "\e[1;32mType 'curl -L https://onefromthelist.com/scritp.sh > script.sh', and run 'sh script.sh'.\e[0m"
+
 
